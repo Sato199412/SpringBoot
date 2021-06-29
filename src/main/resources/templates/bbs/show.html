@@ -21,32 +21,46 @@
             <li>内容: [[${bbs.content}]]</li>
             <li>投稿者:[[${bbs.createUser}]]</li>
         </ul> -->
-        <!-- <form th:method="patch" th:action="@{/{id}/edit(id=${bbs.id})}" th:object="${bbs}" novalidate> -->
+        <!-- <form th:method="patch" th:action="@{/{id}/edit(id=${bbs.id})}" th:object="${bbs}" novalidate>
             <div class="form-group row">
                 <label for="createDate" class="col2">作成日:[[${bbs.createDate}]]</label>
-                <!-- <input type="text" th:text="*{createDate}" class="form-control col-10">
-                <span th:errors="*{createUser}"></span> -->
+                <input type="text" th:text="*{createDate}" class="form-control col-10">
+                <span th:errors="*{createUser}"></span>
             </div>
             <div class="form-group row">
                 <label for="title" class="col-2">タイトル:[[${bbs.title}]]</label>
-                <!-- <input type="text" th:text="*{title}" class="form-control col-10"> -->
-                <!-- <span th:errors="*{title}"></span> -->
+                <input type="text" th:text="*{title}" class="form-control col-10">
+                <span th:errors="*{title}"></span>
             </div>
             <div class="form-group row">
                 <label for="content" class="col2">内容:[[${bbs.content}]]</label>
-                <!-- <textarea th:text="*{content}" name="content" id="" cols="70" rows="20"></textarea> -->
-                <!-- <input type="textarea" th:field="*{content}" class="form-control col-10"> -->
-                <!-- <span th:errors="*{content}"></span> -->
+                <textarea th:text="*{content}" name="content" id="" cols="70" rows="20"></textarea>
+                <span th:errors="*{content}"></span>
             </div>
             <div class="form-group row">
                 <label for="createUser" class="col2">投稿者:[[${bbs.createUser}]]</label>
-                <!-- <input type="text" th:text="*{createUser}" class="form-control col-10"> -->
-                <!-- <span th:errors="*{createUser}"></span> -->
+                <input type="text" th:text="*{createUser}" class="form-control col-10">
+                <span th:errors="*{createUser}"></span>
             </div>
-            <!-- <div class="form-group">
-                <input type="submit" value="Update" class="btn btn-primary">
-            </div> -->
-        </form>
+        </form> -->
+        <table border="2" th:if="${bbs}">
+            <tr>
+                <th>作成日</th>
+                <th>[[${bbs.createDate}]]</th>
+            </tr>
+            <tr>
+                <th>タイトル</th>
+                <th>[[${bbs.title}]]</th>
+            </tr>
+            <tr>
+                <th>内容</th>
+                <th><p th:utext="${bbs.content}"></p></th>
+            </tr>
+            <tr>
+                <th>投稿者</th>
+                <th>[[${bbs.createUser}]]</th>
+            </tr>
+        </table>
         <h1 th:unless="${bbs}" th:text="データがありません"></h1>
         <a th:href="@{/}">戻る</a> 
     </div>

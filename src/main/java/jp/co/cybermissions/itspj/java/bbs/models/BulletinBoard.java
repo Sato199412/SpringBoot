@@ -42,6 +42,18 @@ public class BulletinBoard {
     @Column(nullable = false)
     private String content;
 
+    public String getContent() {
+        if (content != null && !content.isEmpty()){
+            return content.replaceAll("\n", "<br/>");
+        } else {
+            return content;
+        }
+    }
+
+    public void setContent(String content) {
+        this.content = content;
+    }
+
     @NotBlank
     @Size(max = 100)
     private String createUser;

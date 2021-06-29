@@ -15,22 +15,30 @@
 <body>
     <div class="container">
         <h1 class="">掲示板</h1>
-        <ul th:if="${bbs}">
+        <!-- <ul th:if="${bbs}">
             <li>作成日: [[${bbs.createDate}]]</li>
             <li>タイトル: [[${bbs.title}]]</li>
             <li>内容: [[${bbs.content}]]</li>
             <li>投稿者:[[${bbs.createUser}]]</li>
-        </ul>
-         <!-- <table class="table" th:if="${bbs}">
-                <td>作成日:</td>
+        </ul> -->
+        <table border="2" th:if="${bbs}">
+            <tr>
+                <th>作成日</th>
                 <th>[[${bbs.createDate}]]</th>
-                <th>タイトル:</th>
+            </tr>
+            <tr>
+                <th>タイトル</th>
                 <th>[[${bbs.title}]]</th>
-                <td>内容:</td>
-                <th>[[${bbs.content}]]</th>
-                <td>作成者:</td>
+            </tr>
+            <tr>
+                <th>内容</th>
+                <th><p th:utext="${bbs.content}"></p></th>
+            </tr>
+            <tr>
+                <th>投稿者</th>
                 <th>[[${bbs.createUser}]]</th>
-        </table> -->
+            </tr>
+        </table>
         <h1 th:unless="${bbs}" th:text="データがありません"></h1>
         <a th:href="@{/bbs}">戻る</a> 
     </div>
