@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1>掲示板登録</h1>
+        <form th:method="post" th:action="@{/}" th:object="${bbs}" novalidate>
+            <div class="form-group row">
+                <label for="title" class="col-2">タイトル:</label>
+                <input type="text" th:field="*{title}" class="form-control col-10">
+                <span th:errors="*{title}"></span>
+            </div>
+            <div class="form-group row">
+                <label for="content" class="col2">内容:</label>
+                <textarea th:field="*{content}" name="content" id="" cols="70" rows="20" class="form-control col-10"></textarea>
+                <!-- <input type="textarea" th:field="*{content}" class="form-control col-10"> -->
+                <span th:errors="*{content}"></span>
+            </div>
+            <div class="form-group row">
+                <label for="createUser" class="col2">投稿者:</label>
+                <input type="text" th:field="*{createUser}" class="form-control col-10">
+                <span th:errors="*{createUser}"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary">
+            </div>
+        </form>
+        <a th:href="@{/}">戻る</a> 
+        <!-- <textarea name="" id="" cols="70" rows="20">ここに内容を入力</textarea> -->
+    </div>
+</body>
+
+</html>

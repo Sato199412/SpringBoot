@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+    <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
+    <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+    <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+
+<body>
+    <div class="container">
+        <h1 class="">掲示板</h1>
+        <ul th:if="${bbs}">
+            <li>作成日: [[${bbs.createDate}]]</li>
+            <li>タイトル: [[${bbs.title}]]</li>
+            <li>内容: [[${bbs.content}]]</li>
+            <li>投稿者:[[${bbs.createUser}]]</li>
+        </ul>
+         <!-- <table class="table" th:if="${bbs}">
+                <td>作成日:</td>
+                <th>[[${bbs.createDate}]]</th>
+                <th>タイトル:</th>
+                <th>[[${bbs.title}]]</th>
+                <td>内容:</td>
+                <th>[[${bbs.content}]]</th>
+                <td>作成者:</td>
+                <th>[[${bbs.createUser}]]</th>
+        </table> -->
+        <h1 th:unless="${bbs}" th:text="データがありません"></h1>
+        <a th:href="@{/bbs}">戻る</a> 
+    </div>
+</body>
+</body>
+
+</html>

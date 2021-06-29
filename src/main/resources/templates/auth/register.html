@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>register</title>
+  <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
+  <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
+  <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
+  <script th:src="@{/webjars/bootstrap/js/bootstrap.min.js}"></script>
+</head>
+
+<body>
+  <h2>ユーザー登録</h2>
+
+  <form th:action="@{/register}" th:method="post" th:object="${user}" novalidate>
+    <div>
+      <label for="username">ユーザー名：</label>
+      <input type="text" th:field="*{username}">
+      <span th:errors="*{username}"></span>
+    </div>
+    <div>
+      <label for="username">パスワード：</label>
+      <input type="password" th:field="*{password}">
+      <span th:errors="*{password}"></span>
+    </div>
+    <div>
+      <label for="email">Eメール：</label>
+      <input type="email" th:field="*{email}">
+      <span th:errors="*{email}"></span>
+    </div>
+    <div>
+      <label for="admin">管理者：</label>
+      <input type="checkbox" th:field="*{admin}">
+    </div>
+    <button>登録</button>
+  </form>
+</body>
+
+</html>
