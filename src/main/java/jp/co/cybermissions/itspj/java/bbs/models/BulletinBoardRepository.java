@@ -6,6 +6,8 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface BulletinBoardRepository extends JpaRepository<BulletinBoard, Long> {
+
+    
     // public User findById(int id);
 	// public void deleteById(int id);
 }

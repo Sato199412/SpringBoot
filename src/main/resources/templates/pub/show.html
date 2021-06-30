@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>掲示板</title>
     <link rel="stylesheet" th:href="@{/webjars/bootstrap/css/bootstrap.min.css}">
     <link rel="stylesheet" th:href="@{/webjars/font-awesome/css/all.css}">
     <script th:src="@{/webjars/jquery/jquery.min.js}"></script>
@@ -15,13 +15,7 @@
 <body>
     <div class="container">
         <h1 class="">掲示板</h1>
-        <!-- <ul th:if="${bbs}">
-            <li>作成日: [[${bbs.createDate}]]</li>
-            <li>タイトル: [[${bbs.title}]]</li>
-            <li>内容: [[${bbs.content}]]</li>
-            <li>投稿者:[[${bbs.createUser}]]</li>
-        </ul> -->
-        <table border="2" th:if="${bbs}">
+        <table class="table" th:if="${bbs}">
             <tr>
                 <th>作成日</th>
                 <th>[[${bbs.createDate}]]</th>
