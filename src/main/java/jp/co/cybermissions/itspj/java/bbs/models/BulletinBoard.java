@@ -42,16 +42,24 @@ public class BulletinBoard {
     @Column(nullable = false)
     private String content;
 
-    public String getContent() {
+    // public String getContent() {
+       
+    // }
+
+    // public void setContent(String content) {
+    //     if (content != null && !content.isEmpty()){
+    //         this.content = content.replaceAll( "<br/>","\n");
+    //     } else {
+    //         this.content = content;
+    //     }
+    // }
+
+    public String getBrContent() {
         if (content != null && !content.isEmpty()){
             return content.replaceAll("\n", "<br/>");
         } else {
             return content;
-        }
-    }
-
-    public void setContent(String content) {
-        this.content = content;
+        } 
     }
 
     @NotBlank

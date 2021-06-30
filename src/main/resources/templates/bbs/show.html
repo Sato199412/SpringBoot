@@ -45,20 +45,20 @@
         </form> -->
         <table class="table" th:if="${bbs}">
             <tr>
-                <th>作成日</th>
-                <th>[[${bbs.createDate}]]</th>
+                <th class="col-2">作成日</th>
+                <th class="col-10">[[${bbs.createDate}]]</th>
             </tr>
             <tr>
-                <th>タイトル</th>
-                <th>[[${bbs.title}]]</th>
+                <th class="col-2">タイトル</th>
+                <th class="col-10">[[${bbs.title}]]</th>
             </tr>
             <tr>
-                <th>内容</th>
-                <th><p th:utext="${bbs.content}"></p></th>
+                <th class="col-2">内容</th>
+                <th class="col-10"><p th:utext="${bbs.brContent}"></p></th>
             </tr>
             <tr>
-                <th>投稿者</th>
-                <th>[[${bbs.createUser}]]</th>
+                <th class="col-2">投稿者</th>
+                <th class="col-10">[[${bbs.createUser}]]</th>
             </tr>
         </table>
         <h1 th:unless="${bbs}" th:text="データがありません"></h1>

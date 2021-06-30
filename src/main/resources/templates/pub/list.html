@@ -23,7 +23,7 @@
             </thead>
             <tbody>
                 <tr th:each="bbs : ${postlist}" th:object="${bbs}">
-                    <td th:text="${bbs.createDate}"></td>
+                    <td th:text="${#dates.format (bbs.createDate, 'yyy/MM/dd')}"></td>
                     <td>
                         <a th:href="@{/bbs/{id}/show(id=*{id})}" th:text="${bbs.title}"></a>
                     </td>
