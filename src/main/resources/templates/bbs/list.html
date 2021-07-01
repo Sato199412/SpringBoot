@@ -31,6 +31,8 @@
                 <th>作成日</th>
                 <th>タイトル</th>
                 <th>作成者</th>
+                <th></th>
+                <th></th>
             </thead>
             <tbody>
                 <tr th:each="bbs : ${postlist}" th:object="${bbs}">
@@ -42,7 +44,7 @@
                     <td><a th:href="@{/{id}/edit(id=*{id})}" class="btn btn-outline-warning"><i class="fas fa-edit">変更</i></a></td>
                     <td>
                         <form th:method="delete" th:action="@{/{id}(id=*{id})}">
-                            <button type="submit" onclick="return confirm('本当に削除しますか')" class="btn btn-outline-danger"><i class="fas fa-trash-alt">削除</i></button>
+                            <button type="submit" onclick="return confirm('本当に削除しますか?')" class="btn btn-outline-danger"><i class="fas fa-trash-alt">削除</i></button>
                         </form>
                     </td>
                 </tr>
