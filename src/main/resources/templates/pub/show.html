@@ -13,6 +13,17 @@
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" th:href="@{/bbs}">
+                <img th:src="@{/image/45212.png}" width="30" height="30" class="d-inline-block align-top" alt="">
+              掲示板
+            </a>
+            <div class="">
+                <a th:href="@{/login}" class="btn btn-outline-success">ログイン</a>
+            </div>
+          </nav>
+      </header>
     <div class="container">
         <h1 class="">掲示板</h1>
         <table class="table" th:if="${bbs}">
@@ -34,7 +45,7 @@
             </tr>
         </table>
         <h1 th:unless="${bbs}" th:text="データがありません"></h1>
-        <a th:href="@{/bbs}">戻る</a> 
+        <a th:href="@{/bbs}" class="btn btn-info">戻る</a> 
     </div>
 </body>
 </body>

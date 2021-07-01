@@ -14,16 +14,15 @@
 
 <body>
     <header>
-        <!-- <div class="header-logo">
-            掲示板
-        </div>
-        <div class="header-list">
-          <ul>
-            <li></li>
-            <li></li>
-            <li></li>
-          </ul>
-        </div> -->
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" th:href="@{/}">
+                <img th:src="@{/image/45212.png}" width="30" height="30" class="d-inline-block align-top" alt="">
+              掲示板
+            </a>
+            <div class="">
+                <a th:href="@{/logout}" class="btn btn-outline-success">ログアウト</a>
+            </div>
+          </nav>
       </header>
     <div class="container">
         <h1 class="">掲示板</h1>
@@ -49,7 +48,7 @@
                 </tr>
             </tbody>
         </table>
-        <a th:href="@{/new}">新規追加</a>
+        <a th:href="@{/new}" class="btn btn-primary">新規追加</a>
     </div>
 </body>
 

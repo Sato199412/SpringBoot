@@ -13,6 +13,17 @@
 </head>
 
 <body>
+    <header>
+        <nav class="navbar navbar-light bg-light">
+            <a class="navbar-brand" th:href="@{/}">
+                <img th:src="@{/image/45212.png}" width="30" height="30" class="d-inline-block align-top" alt="">
+              掲示板
+            </a>
+            <div class="">
+                <a th:href="@{/logout}" class="btn btn-outline-success">ログアウト</a>
+            </div>
+          </nav>
+      </header>
     <div class="container">
         <h1>掲示板更新</h1>
         <form th:method="patch" th:action="@{/{id}/edit(id=${bbs.id})}" th:object="${bbs}" novalidate>
@@ -35,7 +46,7 @@
                 <input type="submit" value="Update" class="btn btn-primary">
             </div>
         </form>
-        <a th:href="@{/}">戻る</a> 
+        <a th:href="@{/}"class="btn btn-info">戻る</a> 
         <!-- <textarea name="" id="" cols="70" rows="20">ここに内容を入力</textarea> -->
     </div>
 </body>

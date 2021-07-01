@@ -1,13 +1,16 @@
 package jp.co.cybermissions.itspj.java.bbs.models;
 
-// import org.apache.catalina.User;
+// import java.util.List;
+
 import org.springframework.data.jpa.repository.JpaRepository;
+// import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
+
+
 
 @Repository
 public interface BulletinBoardRepository extends JpaRepository<BulletinBoard, Long> {
 
-    
-    // public User findById(int id);
-	// public void deleteById(int id);
+    // @Query("SELECT * FROM BBS ORDER BY CREATE_DATE DESC")
+    // List<BulletinBoard> findAllOderByCreateDateDesc();
 }
