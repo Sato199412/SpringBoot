@@ -2,6 +2,7 @@ package jp.co.cybermissions.itspj.java.bbs.Controller;
 
 import java.util.List;
 
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -21,7 +22,7 @@ public class PublicBulletinBoardController {
 
     @GetMapping("")
     public String list(Model model){
-        List<BulletinBoard> list = rep.findAll();
+        List<BulletinBoard> list = rep.findAll(Sort.by(Sort.Direction.DESC, "createDate"));
         model.addAttribute("postlist", list);
         return "pub/list";
     }
